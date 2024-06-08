@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <button id="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div id="menu">
+        <button onclick="showGame('rps')">Rock Paper Scissors</button>
+        <button onclick="showGame('guess')">Number Guessing</button>
+    </div>
+    
+    <h1 id="game-title">Choose a Game</h1>
+    
+    <div id="rock-paper-scissors" class="game" style="display:none;">
+        <div class="choices">
+            <button class="choice" onclick="playRPS('rock')">Rock</button>
+            <button class="choice" onclick="playRPS('paper')">Paper</button>
+            <button class="choice" onclick="playRPS('scissors')">Scissors</button>
+        </div>
+        <div id="rps-result"></div>
+    </div>
+    
+    <div id="number-guessing" class="game" style="display:none;">
+        <input type="number" id="guess-input" placeholder="Enter your guess" />
+        <button onclick="playGuess()">Submit Guess</button>
+        <div id="guess-result"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
